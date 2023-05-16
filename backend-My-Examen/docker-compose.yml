@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  DB:
+    image: postgres
+    build: .
+    environment:
+      - POSTGRES_USER=${DBPOSTGRES_USER}
+      - POSTGRES_PASSWORD=${DBPOSTGRES_PASSWORD}
+      - POSTGRES_DB=${DBPOSTGRES_DB}
+
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+  Backend:
+    image: backend:examen
+
+    ports:
+      - "0.0.0.0:9002:9000"
