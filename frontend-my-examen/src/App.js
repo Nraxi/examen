@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import Alert from './handlers/Alert'
+import './handlers/Axios'
 
 function App() {
 

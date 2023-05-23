@@ -11,8 +11,9 @@ function Login(props) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { setJwtToken } = useOutletContext();
-  const { setAlertMessage } = useOutletContext();
+  const { setAlertMessage } = useOutletContext("");
   const { setAlertClassName } = useOutletContext();
+  const [jwts, setjwts] = useState("")
 
   const navigate = useNavigate();
 
@@ -26,29 +27,37 @@ function Login(props) {
 
     console.log(Body);
 
-    // axios.post("v1/login", Body)
-    //     .then((res) => {
-    //       setCookie(res.data);
-    //       Navigate('/product', { replace: true });
-    //     })
-    //     .catch((error) => {
-    //       setErrorMsg(error.data);
-    //     })
-    // }
+    axios.post("/v1/login", Body)
+      .then((res) => {
+        setjwts(res.data);
+        setAlertClassName("")
+        setAlertMessage("")
+        // Navigate('/product', { replace: true });
+        // console.log("res", res);
+      })
+      .catch((error) => {
+        setAlertMessage(error.response.data.error);
+        setEmail("")
+        setPassword("")
+        setAlertClassName("alert-danger")
+      })
 
-    if (email === "admin300") {
-      setJwtToken("abc");
-      setAlertClassName("")
-      setAlertMessage("")
-
-      navigate("/")
-    } else {
-      setEmail("")
-      setPassword("")
-      setAlertClassName("alert-danger")
-      setAlertMessage("invalid credentials")
-    }
   }
+
+  console.log("jwt:", jwts);
+  // if (email === setJwtToken) {
+
+  //   setAlertClassName("")
+  //   setAlertMessage("")
+
+  //   navigate("/")
+  // } else {
+  //   setEmail("")
+  //   setPassword("")
+  //   setAlertClassName("alert-danger")
+  //   setAlertMessage("invalid credentials")
+  // }
+
 
   return (
     <>
