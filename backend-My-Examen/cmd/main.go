@@ -33,7 +33,7 @@ func main() {
 		r.Use(cors.New(cors.Config{
 			AllowOrigins:     []string{"http://localhost:3000"},
 			AllowMethods:     []string{"POST", "PUT", "GET", "DELETE"},
-			AllowHeaders:     []string{"Origin", "Content-Type"},
+			AllowHeaders:     []string{"Origin", "Content-Type", "withCredentials"},
 			ExposeHeaders:    []string{"Content-Length"},
 			AllowCredentials: true,
 			MaxAge:           12 * time.Hour,
