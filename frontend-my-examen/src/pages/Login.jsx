@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Navigate, useNavigate, useOutletContext } from 'react-router-dom'
+import { Navigate, useNavigate, useOutletContext, Outlet } from 'react-router-dom'
 import Input from '../handlers/Input'
 import axios from 'axios'
+import Alert from '../handlers/Alert'
 
 
 
@@ -11,8 +12,10 @@ function Login(props) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { setJwtToken } = useOutletContext();
-  const { setAlertMessage } = useOutletContext("");
-  const { setAlertClassName } = useOutletContext();
+
+
+  const [alertMessage, setAlertMessage] = useState("")
+  const [alertClassName, setAlertClassName] = useState("d-none")
 
 
   const navigate = useNavigate();
@@ -82,9 +85,13 @@ function Login(props) {
               value="Login"
             />
           </form>
-
+          <Alert
+            message={alertMessage}
+            className={alertClassName}
+          />
         </div>
       </div >
+      <Outlet context={{ setAlertClassName, setAlertMessage }} />
     </>
   )
 }

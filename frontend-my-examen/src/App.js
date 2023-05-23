@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
-import Alert from './handlers/Alert'
+
 import './handlers/Axios'
 
 function App() {
 
   const [jwtToken, setJwtToken] = useState("")
-  const [alertMessage, setAlertMessage] = useState("")
-  const [alertClassName, setAlertClassName] = useState("d-none")
+
 
 
   const navigate = useNavigate();
@@ -43,11 +42,8 @@ function App() {
         </div>
       </nav >
       <div>
-        <Alert
-          message={alertMessage}
-          className={alertClassName}
-        />
-        <Outlet context={{ jwtToken, setJwtToken, setAlertMessage, setAlertClassName }} />
+
+        <Outlet context={{ jwtToken, setJwtToken }} />
       </div>
     </div >
   )
