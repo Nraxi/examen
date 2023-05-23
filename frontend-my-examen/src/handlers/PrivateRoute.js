@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
       withCredentials: true,
     })
       .then(response => {
-
+        setJwtToken(response);
         // No action needed if the response status is 200 (OK)
         // The user is authenticated and can access the protected route
       })

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
-
 import './handlers/Axios'
+import axios from 'axios'
 
 function App() {
 
@@ -13,9 +13,14 @@ function App() {
 
   const LogOut = () => {
     setJwtToken("");
+    axios.post("/v1/logout")
     navigate("/login")
   }
-
+  useEffect(() => {
+    if (window.location.href === "http://localhost:3000/") {
+      LogOut();
+    }
+  }, []);
 
   return (
     <div>
@@ -29,13 +34,15 @@ function App() {
 
           {jwtToken === "" &&
             <>
+              <Link to="/">Home</Link><br />
               <Link to="/signup"><span>Signup</span></Link><br />
             </>
           }
 
-          <Link to="/">Home</Link><br />
+
           {jwtToken !== "" &&
             <>
+              <Link to="/">Home</Link><br />
               <Link to="/product">Products</Link><br />
             </>
           }
