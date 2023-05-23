@@ -13,7 +13,7 @@ function Login(props) {
   const { setJwtToken } = useOutletContext();
   const { setAlertMessage } = useOutletContext("");
   const { setAlertClassName } = useOutletContext();
-  const [jwts, setjwts] = useState("")
+
 
   const navigate = useNavigate();
 
