@@ -44,19 +44,6 @@ function Login(props) {
 
   }
 
-  // console.log("jwt:", jwts);
-  // if (email === setJwtToken) {
-
-  //   setAlertClassName("")
-  //   setAlertMessage("")
-
-  //   navigate("/")
-  // } else {
-  //   setEmail("")
-  //   setPassword("")
-  //   setAlertClassName("alert-danger")
-  //   setAlertMessage("invalid credentials")
-  // }
 
 
   return (
