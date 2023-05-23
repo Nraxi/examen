@@ -29,10 +29,10 @@ function Login(props) {
 
     axios.post("/v1/login", Body)
       .then((res) => {
-        setjwts(res.data);
+        setJwtToken(res.data);
         setAlertClassName("")
         setAlertMessage("")
-        // Navigate('/product', { replace: true });
+        navigate('/product', { replace: true });
         // console.log("res", res);
       })
       .catch((error) => {
@@ -44,7 +44,7 @@ function Login(props) {
 
   }
 
-  console.log("jwt:", jwts);
+  // console.log("jwt:", jwts);
   // if (email === setJwtToken) {
 
   //   setAlertClassName("")
