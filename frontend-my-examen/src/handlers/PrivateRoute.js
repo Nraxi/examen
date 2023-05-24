@@ -21,7 +21,7 @@ const PrivateRoute = ({ children }) => {
           const { status } = error.response;
           if (status === 401) {
             // Access token has expired, send a POST request to refresh endpoint
-            axios.post('/v1/refresh', null, {
+            axios.post("/v1/refresh", null, {
               withCredentials: true,
             })
               .then(refreshResponse => {
@@ -36,11 +36,11 @@ const PrivateRoute = ({ children }) => {
                 navigate('/login', { replace: true });
               });
           } else {
-            console.error('Error:', error);
+            // console.error('Error:', error);
             // Handle other error cases
           }
         } else {
-          console.error('Error:', error);
+          // console.error('Error:', error);
           // Handle other error cases
         }
       });

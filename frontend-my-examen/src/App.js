@@ -19,10 +19,12 @@ function App() {
 
 
   useEffect(() => {
-    if (window.location.href === "http://localhost:3000" || "http://localhost:3000/login") {
+    if (window.location.pathname === "/" || window.location.pathname === "/login") {
       axios.post("/v1/logout")
     }
   }, []);
+
+
 
   return (
     <div>
@@ -37,7 +39,7 @@ function App() {
           }
           {jwtToken !== "" &&
             <>
-              {/* <Link to="/">Home</Link><br /> */}
+
               <Link to="/startpage">Startpage</Link><br />
               <Link to="/product">Products</Link><br />
             </>
