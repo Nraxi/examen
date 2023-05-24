@@ -1,38 +1,52 @@
-import React, { useState, useEffect } from 'react'
+
+
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function StartpageLoggedIn() {
+  const [data, setData] = useState("");
 
-  const [getUserInfo, setGetUserInfo] = useState("")
-
-
+  const url = "/admin/user-validate-res";
 
   useEffect(() => {
-    getPosts();
+    axios
+      .get(url)
+      .then((res) => {
+        const responseData = res.data;
+        setData(responseData.data);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
-  const getPosts = () => {
-    axios
-      .get("/admin/user-validate-res")
-      .then((res) => setGetUserInfo(res.data.data))
-      .catch((error) => {
-        console.log("Small issues", error.response.statusText);
-      })
-  }
-
-
-
-
-
-
+  const dataArray = Object.entries(data);
 
   return (
-    <div>StartpageLoggedIn
-      <p>Welcome! {getUserInfo.Name}</p>
+    <div>
+      <div>
+        <h3>Welcomme</h3>
+        <p>{data.Name}</p>
+      </div>
 
-
+      <p>Your user information:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User info</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataArray.map(([key, value]) => (
+            <tr key={key}>
+              <th>{key}</th>
+              <td>{JSON.stringify(value)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
+  );
 }
 
-export default StartpageLoggedIn
+export default StartpageLoggedIn;
+

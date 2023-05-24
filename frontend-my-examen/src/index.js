@@ -10,6 +10,7 @@ import Products from './pages/Products'
 import PrivateRoute from './handlers/PrivateRoute';
 import StartpageLoggedIn from './pages/StartpageLoggedIn';
 import LoggedOut from './pages/LoggedOut';
+import Tryme from './pages/Tryme';
 
 
 
@@ -37,6 +38,13 @@ const router = createBrowserRouter([
         element:
           <PrivateRoute>
             <Products />
+          </PrivateRoute>
+      },
+      {
+        path: "/tryme",
+        element:
+          <PrivateRoute>
+            <Tryme />
           </PrivateRoute>
       },
       {
