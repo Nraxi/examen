@@ -23,6 +23,7 @@ function Products() {
     <div>
       <h1>Random api</h1>
       <p>Randomises a new user when the pages refreshes</p>
+      <img src={data?.picture?.large}></img>
       <table>
         <thead>
           <tr>
@@ -45,6 +46,7 @@ function Products() {
           </tr>
         </tbody>
       </table>
+
     </div>
   );
 }
