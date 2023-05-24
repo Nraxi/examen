@@ -77,6 +77,11 @@ func RegisterRoutes(r *gin.Engine) {
 		c.String(http.StatusOK, "Success.")
 	})
 
+	// admin.GET("/user-validate-res", func(c *gin.Context) {
+	// 	// middleware.RequireAuth(c)
+	// 	middleware.Validate(c)
+	// })
+
 	//						Wall of secure routes
 	//http://localhost:9000/admin/getuser/1 exmpl
 	admin := r.Group("/admin")
@@ -84,6 +89,11 @@ func RegisterRoutes(r *gin.Engine) {
 
 	admin.GET("/auth", func(c *gin.Context) {
 		middleware.RequireAuth(c)
+		middleware.SecureRoutes(c)
+	})
+
+	admin.GET("/user-validate-res", func(c *gin.Context) {
+		// middleware.RequireAuth(c)
 		middleware.Validate(c)
 	})
 
