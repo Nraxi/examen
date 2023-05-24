@@ -11,6 +11,7 @@ import PrivateRoute from './handlers/PrivateRoute';
 import StartpageLoggedIn from './pages/StartpageLoggedIn';
 import LoggedOut from './pages/LoggedOut';
 import Tryme from './pages/Tryme';
+import Signup from './pages/Signup';
 
 
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/login",
