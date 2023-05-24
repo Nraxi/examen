@@ -23,8 +23,8 @@ function StartpageLoggedIn() {
   return (
     <div>
       <div>
-        <h3>Welcomme</h3>
-        <p>{data.Name}</p>
+        <h3>Welcomme: {data.Name}</h3>
+
       </div>
 
       <p>Your user information:</p>

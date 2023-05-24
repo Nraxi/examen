@@ -8,7 +8,7 @@ import Alert from '../handlers/Alert'
 
 
 
-function Login(props) {
+function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { setJwtToken } = useOutletContext();
@@ -28,7 +28,7 @@ function Login(props) {
       password: password,
     }
 
-    console.log(Body);
+    // console.log(Body);
 
     axios.post("/v1/login", Body)
       .then((res) => {

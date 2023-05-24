@@ -41,8 +41,8 @@ function App() {
             <>
 
               <Link to="/startpage">Startpage</Link><br />
-              <Link to="/product">Products</Link><br />
-              <Link to="/tryme">tryme</Link><br />
+              <Link to="/product">Get from outside api</Link><br />
+              <Link to="/tryme">Json Blob</Link><br />
             </>
           }
           {jwtToken === ""

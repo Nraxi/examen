@@ -1,49 +1,52 @@
 import { useState, useEffect } from 'react';
 
 function Products() {
+  const [data, setData] = useState(null);
 
-  function Generate() {
-    const [items, setItems] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://randomuser.me/api/");
+        const jsonData = await response.json();
+        setData(jsonData.results[0]);
+      } catch (err) {
+        console.error(err);
+      }
+    };
 
-    const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+    fetchData();
+  }, []);
 
-    useEffect(() => {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => setItems(data.drinks))
-        .catch(err => console.error(err));
-    }, [])
-
-    return items;
-  }
-
-  let data = Generate();
   console.log(data);
+
   return (
     <div>
-      <h1>Products</h1>
+      <h1>Random api</h1>
+      <p>Randomises a new user when the pages refreshes</p>
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>LIBELLE</th>
-            <th>hey</th>
+            <th>Title</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Nationality</th>
           </tr>
         </thead>
         <tbody>
-          {data.map(u => {
-            return (
-              <tr key={u.idDrink}>
-                <td>{u.idDrink}</td>
-                <td>{u.strDrink}</td>
-                <td>{u.strAlcoholic}</td>
-              </tr>
-            )
-          })}
+          <tr>
+            <td>{data?.name?.title}</td>
+            <td>{data?.name?.first}</td>
+            <td>{data?.name?.last}</td>
+            <td>{data?.location?.city}</td>
+            <td>{data?.location?.country}</td>
+            <td>{data?.nat}</td>
+          </tr>
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
 export default Products;
