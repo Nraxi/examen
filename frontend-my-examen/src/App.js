@@ -19,7 +19,10 @@ function App() {
 
 
   useEffect(() => {
-    if (window.location.pathname === "/" || window.location.pathname === "/login") {
+    if (window.location.pathname === "/" ||
+      window.location.pathname === "/login" ||
+      window.location.pathname === "/signup"
+    ) {
       axios.post("/v1/logout")
     }
   }, []);
