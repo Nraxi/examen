@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigate, useNavigate, useOutletContext, Outlet } from 'react-router-dom'
+import { useNavigate, useOutletContext, Outlet } from 'react-router-dom'
 import Input from '../handlers/Input'
 import axios from 'axios'
 import Alert from '../handlers/Alert'
@@ -35,7 +35,7 @@ function Login(props) {
         setJwtToken(res.data);
         setAlertClassName("")
         setAlertMessage("")
-        navigate('/product', { replace: true });
+        navigate('/startpage', { replace: true });
         // console.log("res", res);
       })
       .catch((error) => {
@@ -61,19 +61,19 @@ function Login(props) {
               id="email"
               value={email}
 
-              title="email: "
+              title="Username:"
               autoComplete="email-new"
               className="email"
               onChange={(event) => setEmail(event.target.value)}
             />
 
             <Input
-              type="text"
+              type="password"
               name="password"
               id="password"
               value={password}
 
-              title="password: "
+              title="Password: "
               autoComplete="password"
               className="password"
               onChange={(event) => setPassword(event.target.value)}

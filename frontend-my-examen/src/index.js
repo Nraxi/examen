@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Products from './pages/Products'
 import PrivateRoute from './handlers/PrivateRoute';
+import StartpageLoggedIn from './pages/StartpageLoggedIn';
+import LoggedOut from './pages/LoggedOut';
 
 
 
@@ -27,12 +29,22 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/logout",
+        element: <LoggedOut />,
+      },
+      {
         path: "/product",
         element:
           <PrivateRoute>
             <Products />
           </PrivateRoute>
-        ,
+      },
+      {
+        path: "/startpage",
+        element:
+          <PrivateRoute>
+            <StartpageLoggedIn />
+          </PrivateRoute>
       },
     ]
   }

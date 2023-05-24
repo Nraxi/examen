@@ -14,11 +14,13 @@ function App() {
   const LogOut = () => {
     setJwtToken("");
     axios.post("/v1/logout")
-    navigate("/login")
+    navigate("/logout")
   }
+
+
   useEffect(() => {
-    if (window.location.href === "http://localhost:3000/") {
-      LogOut();
+    if (window.location.href === "http://localhost:3000" || "http://localhost:3000/login") {
+      axios.post("/v1/logout")
     }
   }, []);
 
@@ -27,25 +29,26 @@ function App() {
       My page
       <nav>
         <div>
-          {jwtToken === ""
-            ? <Link to="/login"><span>Login</span></Link>
-            : <Link to="#" onClick={LogOut}><span>Logout</span></Link>
-          }<br />
-
           {jwtToken === "" &&
             <>
               <Link to="/">Home</Link><br />
               <Link to="/signup"><span>Signup</span></Link><br />
             </>
           }
-
-
           {jwtToken !== "" &&
             <>
-              <Link to="/">Home</Link><br />
+              {/* <Link to="/">Home</Link><br /> */}
+              <Link to="/startpage">Startpage</Link><br />
               <Link to="/product">Products</Link><br />
             </>
           }
+          {jwtToken === ""
+            ? <Link to="/login"><span>Login</span></Link>
+            : <Link to="#" onClick={LogOut}><span>Logout</span></Link>
+          }<br />
+
+
+
         </div>
       </nav >
       <div>
