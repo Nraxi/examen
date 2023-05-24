@@ -1,8 +1,16 @@
-import { useRouteError } from "react-router-dom";
+import { useNavigate, useRouteError } from "react-router-dom";
+import axios from "axios";
 
 export default function ErrorPage() {
   const error = useRouteError();
+  const navigate = useNavigate()
 
+  axios.post("/v1/logout")
+
+  function button() {
+
+    navigate('/', { replace: true });
+  }
   return (
     <div className="container">
       <div className="row">
@@ -13,6 +21,7 @@ export default function ErrorPage() {
             <em>{error.statusText || error.message}</em>
           </p>
         </div>
+        <button onClick={button}>Back to startpage</button>
       </div>
     </div>
   )
