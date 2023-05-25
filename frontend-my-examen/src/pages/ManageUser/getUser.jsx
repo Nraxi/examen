@@ -5,7 +5,8 @@ import Input from '../../handlers/Input';
 function GetUser() {
   const [data, setData] = useState("");
   const [inputfield, setInputField] = useState('');
-  const [resetList, setResetList] = useState(false);
+  const [, setResetList] = useState(false);
+
 
   function GetUsersFromApi() {
     const url = '/admin/getuser/';
@@ -18,7 +19,7 @@ function GetUser() {
         const jsonData = JSON.parse(jsonArray);
         const ArrayData = jsonData[1].users;
         setData(ArrayData);
-        console.log("arraydb", ArrayData);
+        // console.log("arraydb", ArrayData);
       })
       .catch((err) => console.error(err));
   }
