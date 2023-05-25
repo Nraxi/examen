@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import InitialUpgf from './InitialUpgf';
 
 function StartpageLoggedIn() {
   const [data, setData] = useState("");
@@ -44,6 +45,7 @@ function StartpageLoggedIn() {
           ))}
         </tbody>
       </table>
+      <InitialUpgf />
     </div>
   );
 }
