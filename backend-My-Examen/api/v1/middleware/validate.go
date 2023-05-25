@@ -115,6 +115,7 @@ func Validate(c *gin.Context) {
 		}
 
 		models.Response(http.StatusOK, "success", gin.H{
+			"ID":        user.ID,
 			"Name":      user.Name,
 			"Email":     user.Email,
 			"CreatedAt": user.CreatedAt.In(location),
