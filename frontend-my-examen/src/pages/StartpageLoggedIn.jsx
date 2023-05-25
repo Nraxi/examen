@@ -31,8 +31,8 @@ function StartpageLoggedIn() {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>User info</th>
+            <th>Parameters:</th>
+            <th>User information:</th>
           </tr>
         </thead>
         <tbody>

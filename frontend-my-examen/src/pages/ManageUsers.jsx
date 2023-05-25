@@ -2,6 +2,9 @@ import React from 'react'
 import AddUser from './ManageUser/addUser'
 import UpdateUser from './ManageUser/updateUser'
 import StartpageLoggedIn from './StartpageLoggedIn'
+import UpdatePassword from './ManageUser/updatePassword'
+import GetUsers from './ManageUser/getUsers'
+import GetUser from './ManageUser/getUser'
 
 function ManageUsers() {
 
@@ -14,12 +17,18 @@ function ManageUsers() {
   return (
     <div>ManageUsers
       <StartpageLoggedIn />
+      <hr />
       <div>
         <AddUser />
+        <hr />
         <UpdateUser />
-        <p>Update password</p>
-        <p>Delete user</p>
-        <p>Get users</p>
+        <hr />
+        <UpdatePassword />
+        <hr />
+        <GetUsers />
+        <hr />
+        <GetUser />
+        <hr />
       </div>
     </div>
   )

@@ -77,7 +77,6 @@ function UpdateUser() {
               type="text"
               name="email"
               id="email"
-
               value={email}
               title="Your email: "
               autoComplete="email-new"
@@ -89,7 +88,6 @@ function UpdateUser() {
               type="text"
               name="newemail"
               id="newemail"
-
               value={newemail}
               title="New email: "
               autoComplete="newemail-new"
@@ -103,7 +101,6 @@ function UpdateUser() {
               type="text"
               name="name"
               id="name"
-
               title="Name: "
               autoComplete="name-new"
               className="name"
@@ -120,6 +117,7 @@ function UpdateUser() {
             <p>To refresh page:<button onClick={RefreshPage}>Click here</button></p>
           </div>
         </div>
+
       </div >
     </>
   )
