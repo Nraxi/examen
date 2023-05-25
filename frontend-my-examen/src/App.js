@@ -42,8 +42,8 @@ function App() {
           }
           {jwtToken !== "" &&
             <>
-
               <Link to="/startpage">Startpage</Link><br />
+              <Link to="/manageusers">Manage Users</Link> <br />
               <Link to="/product">Get from outside api</Link><br />
               <Link to="/tryme">Json Blob</Link><br />
             </>

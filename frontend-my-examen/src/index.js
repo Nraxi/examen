@@ -12,6 +12,7 @@ import StartpageLoggedIn from './pages/StartpageLoggedIn';
 import LoggedOut from './pages/LoggedOut';
 import Tryme from './pages/Tryme';
 import Signup from './pages/Signup';
+import ManageUsers from './pages/ManageUsers';
 
 
 
@@ -37,6 +38,13 @@ const router = createBrowserRouter([
       {
         path: "/logout",
         element: <LoggedOut />,
+      },
+      {
+        path: "/manageusers",
+        element:
+          <PrivateRoute>
+            <ManageUsers />
+          </PrivateRoute>
       },
       {
         path: "/product",
