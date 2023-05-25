@@ -1,18 +1,18 @@
 import React from 'react'
 import AddUser from './ManageUser/addUser'
 import UpdateUser from './ManageUser/updateUser'
-import StartpageLoggedIn from './StartpageLoggedIn'
 import UpdatePassword from './ManageUser/updatePassword'
 import GetUsers from './ManageUser/getUsers'
 import GetUser from './ManageUser/getUser'
 import DelUser from './ManageUser/delUser'
+import GetUserInformation from './GetUserInformation'
 
 function ManageUsers() {
 
 
   return (
     <div>ManageUsers
-      <StartpageLoggedIn />
+      <GetUserInformation />
       <hr />
       <div>
         <AddUser />
