@@ -48,7 +48,7 @@ function DelUser() {
 
       </div>
       <br />
-      <button onClick={DeleteUsersByID}>Click</button>
+      <button onClick={DeleteUsersByID}>Delete user</button>
     </div>
   );
 }

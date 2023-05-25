@@ -3,7 +3,7 @@ import axios from 'axios';
 import Input from '../../handlers/Input';
 
 function GetUser() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState("");
   const [inputfield, setInputField] = useState('');
   const [resetList, setResetList] = useState(false);
 
@@ -18,6 +18,7 @@ function GetUser() {
         const jsonData = JSON.parse(jsonArray);
         const ArrayData = jsonData[1].users;
         setData(ArrayData);
+        console.log("arraydb", ArrayData);
       })
       .catch((err) => console.error(err));
   }
@@ -43,13 +44,17 @@ function GetUser() {
       </form>
 
       <div>
-        <p>ID: {data.ID}</p>
-        <p>Name: {data.name}</p>
-        <p>Email: {data.email}</p>
-        <p>Password: {data.password}</p>
-        <p>Created: {data.CreatedAt}</p>
-        <p>Latest Update: {data.UpdatedAt}</p>
-        <p>Deleted: {data.DeletedAt}</p>
+        {data && data.ID && (
+          <React.Fragment>
+            <p>ID: {data.ID}</p>
+            <p>Name: {data.name}</p>
+            <p>Email: {data.email}</p>
+            <p>Password: {data.password}</p>
+            <p>Created: {data.CreatedAt}</p>
+            <p>Latest Update: {data.UpdatedAt}</p>
+            <p>Deleted: {data.DeletedAt}</p>
+          </React.Fragment>
+        )}
       </div>
 
       <button onClick={GetUsersFromApi}>Click</button>

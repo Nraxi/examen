@@ -30,7 +30,7 @@ function Signup() {
     emailRef.current.value = ""
     passwordRef.current.value = ""
 
-    console.log(Body);
+    // console.log(Body);
     axios.post("/v1/signup", Body)
       .then((res) => {
         setMessage(res.data.status + " " + "(please go to login)")
@@ -41,7 +41,7 @@ function Signup() {
 
   }
 
-  console.log(message);
+  // console.log(message);
 
 
 
@@ -85,14 +85,13 @@ function Signup() {
               onChange={(event) => setPassword(event.target.value)}
             />
           </Form>
-          <button onClick={handleSubmit}>Submit</button>
-
-          <h4> Your inputs:</h4>
           <div>
+            <h4> Your inputs:</h4>
             Name: {name}<br />
             Email: {email} <br />
             Password: {password} <br />
           </div>
+          <button onClick={handleSubmit}>Submit</button>
           <span>{message}</span>
         </div>
       </div >
