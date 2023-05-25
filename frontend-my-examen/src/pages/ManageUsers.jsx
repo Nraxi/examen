@@ -5,13 +5,9 @@ import StartpageLoggedIn from './StartpageLoggedIn'
 import UpdatePassword from './ManageUser/updatePassword'
 import GetUsers from './ManageUser/getUsers'
 import GetUser from './ManageUser/getUser'
+import DelUser from './ManageUser/delUser'
 
 function ManageUsers() {
-
-
-
-
-
 
 
   return (
@@ -29,6 +25,7 @@ function ManageUsers() {
         <hr />
         <GetUser />
         <hr />
+        <DelUser />
       </div>
     </div>
   )
