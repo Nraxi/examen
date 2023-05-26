@@ -53,12 +53,9 @@ function App() {
             : <Link to="#" onClick={LogOut}><span>Logout</span></Link>
           }<br />
 
-
-
         </div>
       </nav >
       <div>
-
         <Outlet context={{ jwtToken, setJwtToken }} />
       </div>
     </div >

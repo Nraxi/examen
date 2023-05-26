@@ -33,7 +33,7 @@ function Signup() {
     // console.log(Body);
     axios.post("/v1/signup", Body)
       .then((res) => {
-        setMessage(res.data.status + " " + "(please go to login)")
+        setMessage(`${res.data.status} (please go to login)`)
       })
       .catch((error) => {
         setMessage(error.response.data.error);
@@ -91,8 +91,10 @@ function Signup() {
             Email: {email} <br />
             Password: {password} <br />
           </div>
+          <br />
+          <span>{message}</span><br />
           <button onClick={handleSubmit}>Submit</button>
-          <span>{message}</span>
+
         </div>
       </div >
     </>

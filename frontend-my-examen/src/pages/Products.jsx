@@ -23,7 +23,7 @@ function Products() {
     <div>
       <h1>Random api</h1>
       <p>Randomises a new user when the pages refreshes</p>
-      <img src={data?.picture?.large}></img>
+      <img src={data?.picture?.large} alt=" random person"></img>
       <table>
         <thead>
           <tr>
