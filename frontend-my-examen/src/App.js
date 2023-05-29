@@ -24,6 +24,14 @@ function App() {
       window.location.pathname === "/signup"
     ) {
       axios.post("/v1/logout")
+        .catch((error) => {
+          if (error.code === "ERR_NETWORK") {
+            navigate('/', { replace: true })
+          } else {
+            // Do nothing
+            // console.log("ok");
+          }
+        })
     }
   }, []);
 

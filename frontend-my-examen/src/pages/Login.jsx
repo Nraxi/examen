@@ -39,12 +39,15 @@ function Login() {
         // console.log("res", res);
       })
       .catch((error) => {
-        setAlertMessage(error.response.data.error);
-        setEmail("")
-        setPassword("")
-        setAlertClassName("alert-danger")
+        if (error.code === "ERR_NETWORK") {
+          navigate('/error', { replace: true })
+        } else {
+          setAlertMessage(error.response.data.error);
+          setEmail("")
+          setPassword("")
+          setAlertClassName("alert-danger")
+        }
       })
-
   }
 
 

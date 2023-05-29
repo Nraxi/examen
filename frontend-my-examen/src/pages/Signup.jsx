@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Form } from 'react-router-dom'
+import { Form, useNavigate } from 'react-router-dom'
 import Input from '../handlers/Input'
 import axios from 'axios'
 
@@ -15,10 +15,11 @@ function Signup() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const nameRef = useRef(null);
-
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
 
     const Body = {
       name: name,
@@ -36,9 +37,12 @@ function Signup() {
         setMessage(`${res.data.status} (please go to login)`)
       })
       .catch((error) => {
-        setMessage(error.response.data.error);
+        if (error.code === "ERR_NETWORK") {
+          navigate('/error', { replace: true })
+        } else {
+          setMessage(error.response.data.error);
+        }
       })
-
   }
 
   // console.log(message);
