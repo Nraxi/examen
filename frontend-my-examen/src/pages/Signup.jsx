@@ -65,7 +65,7 @@ function Signup() {
             ref={nameRef}
             title="Name: "
             autoComplete="name-new"
-            className="p-2 mt-2 ml-8 rounded md:ml-0  lg:ml-10 "
+            className="p-2 sm:px-10 mt-2 ml-8 rounded md:ml-0  lg:ml-10 "
             onChange={(event) => setName(event.target.value)}
           />
           <Input
@@ -75,7 +75,7 @@ function Signup() {
             ref={emailRef}
             title="Email: "
             autoComplete="email-new"
-            className="p-2 mt-2 ml-9 rounded md:ml-0  lg:ml-11"
+            className="p-2 sm:px-10 mt-2 ml-9 rounded md:ml-0  lg:ml-11"
             onChange={(event) => setEmail(event.target.value)}
           />
 
@@ -86,7 +86,7 @@ function Signup() {
             ref={passwordRef}
             title="Password: "
             autoComplete="password"
-            className="p-2 mt-2 ml-1 rounded lg:ml-3"
+            className="p-2 sm:px-10 mt-2 ml-1 rounded lg:ml-3"
             onChange={(event) => setPassword(event.target.value)}
           />
         </Form>

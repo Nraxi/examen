@@ -52,56 +52,61 @@ function UpdatePassword() {
 
   return (
     <div>
-      <h2>Update Password:</h2>
-      <p>{msg}</p>
-      <p>{msgErr}</p>
-      <form>
-        <Input
-          type="text"
-          name="email"
-          id="email"
-          value={email}
-          title="Your email: "
-          autoComplete="email-new"
-          className="email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
+      <div className="grid md:grid-cols-3">
+        <h3 className="mb-10 col-span-3 md:col-start-2 md:col-span-1 text-center mt-10 text-2xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
+          Update Password:</h3>
+        <div className="mb-2 col-span-3 md:col-start-2 md:col-span-1 row-start-2 p-4 rounded backdrop-blur bg-white/50">
+          <p>{msg}</p>
+          <p>{msgErr}</p>
+          <form>
+            <Input
+              type="text"
+              name="email"
+              id="email"
+              value={email}
+              title="Your email: "
+              autoComplete="email-new"
+              className="email"
+              onChange={(event) => setEmail(event.target.value)}
+            />
 
-        <Input
-          type="text"
-          name="oldpassword"
-          id="oldpassword"
-          value={oldpassword}
-          title="Your old password: "
-          autoComplete="oldpassword-new"
-          className="oldpassword"
-          onChange={(event) => setOldpassword(event.target.value)}
-        />
+            <Input
+              type="text"
+              name="oldpassword"
+              id="oldpassword"
+              value={oldpassword}
+              title="Your old password: "
+              autoComplete="oldpassword-new"
+              className="oldpassword"
+              onChange={(event) => setOldpassword(event.target.value)}
+            />
 
-        <Input
-          type="text"
-          name="newpassword"
-          id="newpassword"
-          value={newpassword}
-          title="Your new password: "
-          autoComplete="newpassword-new"
-          className="newpassword"
-          onChange={(event) => setNewPassword(event.target.value)}
-        />
+            <Input
+              type="text"
+              name="newpassword"
+              id="newpassword"
+              value={newpassword}
+              title="Your new password: "
+              autoComplete="newpassword-new"
+              className="newpassword"
+              onChange={(event) => setNewPassword(event.target.value)}
+            />
 
-        <Input
-          type="text"
-          name="confirmpassword"
-          id="confirmpassword"
-          value={confirmpassword}
-          title="Confirm password: "
-          autoComplete="confirmpassword-new"
-          className="confirmpassword"
-          onChange={(event) => setConfirmPassword(event.target.value)}
-        />
-      </form>
-      <button onClick={handleSubmit}>Submit</button>
+            <Input
+              type="text"
+              name="confirmpassword"
+              id="confirmpassword"
+              value={confirmpassword}
+              title="Confirm password: "
+              autoComplete="confirmpassword-new"
+              className="confirmpassword"
+              onChange={(event) => setConfirmPassword(event.target.value)}
+            />
+          </form>
+          <button onClick={handleSubmit}>Submit</button>
 
+        </div>
+      </div>
     </div>
   )
 }

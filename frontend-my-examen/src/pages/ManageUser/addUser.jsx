@@ -48,10 +48,10 @@ function AddUser() {
 
   return (
     <>
-      <div>
-        <h3>Create an user/account:</h3>
-
-        <div>
+      <div className="grid md:grid-cols-3">
+        <h3 className="mb-10 col-span-3 md:col-start-2 md:col-span-1 text-center mt-10 text-2xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
+          Create an user/account</h3>
+        <div className="mb-2 col-span-3 md:col-start-2 md:col-span-1 row-start-2 p-4 rounded backdrop-blur bg-white/50">
           <Form>
             <Input
               type="text"

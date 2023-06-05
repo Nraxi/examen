@@ -11,7 +11,8 @@ function ManageUsers() {
 
 
   return (
-    <div>ManageUsers
+    <div>
+      <h1 className="text-center text-6xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2 mt-10">Manage Users</h1>
       <GetUserInformation />
       <hr />
       <div>

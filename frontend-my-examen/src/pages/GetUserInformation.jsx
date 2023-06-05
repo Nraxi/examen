@@ -22,32 +22,37 @@ function GetUserInformation() {
   const dataArray = Object.entries(data);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center mt-10">
       <div>
-        <h3>Welcomme: {data.Name}</h3>
-
+        <h1 className="text-center text-6xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
+          Welcome: {data.Name}
+        </h1>
       </div>
+      <p className="text-center mt-10 text-2xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
+        Your Personal information:
+      </p>
 
-      <p>Your user information:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Parameters:</th>
-            <th>User information:</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dataArray.map(([key, value]) => (
-            <tr key={key}>
-              <th>{key}</th>
-              <td>{JSON.stringify(value)}</td>
+      <div>
+        <table className='text-white'>
+          <thead>
+            <tr>
+              <th>Parameters:</th>
+              <th>User information:</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {dataArray.map(([key, value]) => (
+              <tr key={key}>
+                <th className='flex'>{key}:</th>
+                <td>{JSON.stringify(value)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-  );
-}
 
+  )
+}
 export default GetUserInformation;
 

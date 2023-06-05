@@ -69,57 +69,64 @@ function UpdateUser() {
   return (
     <>
       <div>
-        <h3>Update an user/account:</h3>
-        <p>Put in your email to change any parameters</p>
-        <div>
-          <Form>
-            <Input
-              type="text"
-              name="email"
-              id="email"
-              value={email}
-              title="Your email: "
-              autoComplete="email-new"
-              className="email"
-              onChange={(event) => setEmail(event.target.value)}
-            />
-            <br />
-            <Input
-              type="text"
-              name="newemail"
-              id="newemail"
-              value={newemail}
-              title="New email: "
-              autoComplete="newemail-new"
-              className="newemail"
-              onChange={(event) => setNewEmail(event.target.value)}
-            />
+        <div className="grid md:grid-cols-3">
+          <h3 className="mb-10 col-span-3 md:col-start-2 md:col-span-1 text-center mt-10 text-2xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
+            Update an user/account:</h3>
+          <div className="mb-2 col-span-3 md:col-start-2 md:col-span-1 row-start-2 p-4 rounded backdrop-blur bg-white/50">
+
+            <p>Put in your email to change any parameters</p>
+            <div>
+              <Form>
+                <Input
+                  type="text"
+                  name="email"
+                  id="email"
+                  value={email}
+                  title="Your email: "
+                  autoComplete="email-new"
+                  className="email"
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+                <br />
+                <Input
+                  type="text"
+                  name="newemail"
+                  id="newemail"
+                  value={newemail}
+                  title="New email: "
+                  autoComplete="newemail-new"
+                  className="newemail"
+                  onChange={(event) => setNewEmail(event.target.value)}
+                />
 
 
 
-            <Input
-              type="text"
-              name="name"
-              id="name"
-              title="Name: "
-              autoComplete="name-new"
-              className="name"
-              onChange={(event) => setName(event.target.value)}
-            />
+                <Input
+                  type="text"
+                  name="name"
+                  id="name"
+                  title="Name: "
+                  autoComplete="name-new"
+                  className="name"
+                  onChange={(event) => setName(event.target.value)}
+                />
 
-          </Form>
-          <span>{message}</span><br />
-          <button onClick={handleSubmit}>Submit</button>
-          <div>
-            <h4>Response:</h4>
-            <p>new name: {resData.name}</p>
-            <p>new email: {resData.email}</p>
-            <p>To refresh page:<button onClick={RefreshPage}>Click here</button></p>
-          </div>
+              </Form>
+              <span>{message}</span><br />
+              <button onClick={handleSubmit}>Submit</button>
+              <div>
+                <h4>Response:</h4>
+                <p>new name: {resData.name}</p>
+                <p>new email: {resData.email}</p>
+                <p>To refresh page:<button onClick={RefreshPage}>Click here</button></p>
+              </div>
+            </div>
+
+          </div >
         </div>
-
-      </div >
+      </div>
     </>
+
   )
 }
 

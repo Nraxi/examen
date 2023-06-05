@@ -28,27 +28,31 @@ function DelUser() {
 
 
   return (
-    <div>
-      <h2>Delete User by ID</h2>
-      <p>{data}</p>
-      <p>{dataErr}</p>
-      <form>
-        <Input
-          type="text"
-          name="inputfield"
-          id="inputfield"
-          title="id: "
-          autoComplete="inputfield-new"
-          className="inputfield"
-          onChange={(event) => setInputField(event.target.value)}
-        />
-      </form>
+    <div className="grid md:grid-cols-3">
+      <h3 className="mb-10 col-span-3 md:col-start-2 md:col-span-1 text-center mt-10 text-2xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
+        Delete User by ID</h3>
+      <div className="mb-2 col-span-3 md:col-start-2 md:col-span-1 row-start-2 p-4 rounded backdrop-blur bg-white/50">
+        <h2>Put in the ID of the user you want to delete</h2>
+        <p>{data}</p>
+        <p>{dataErr}</p>
+        <form>
+          <Input
+            type="text"
+            name="inputfield"
+            id="inputfield"
+            title="id: "
+            autoComplete="inputfield-new"
+            className="inputfield"
+            onChange={(event) => setInputField(event.target.value)}
+          />
+        </form>
 
-      <div>
+        <div>
 
+        </div>
+        <br />
+        <button onClick={DeleteUsersByID}>Delete user</button>
       </div>
-      <br />
-      <button onClick={DeleteUsersByID}>Delete user</button>
     </div>
   );
 }
