@@ -60,7 +60,7 @@ function AddUser() {
               ref={nameRef}
               title="name: "
               autoComplete="name-new"
-              className="name"
+              className="px-10 py-2 mt-2 rounded sm:ml-10"
               onChange={(event) => setName(event.target.value)}
             />
             <Input
@@ -70,7 +70,7 @@ function AddUser() {
               ref={emailRef}
               title="email: "
               autoComplete="email-new"
-              className="email"
+              className="px-10 py-2 mt-2 rounded sm:ml-10"
               onChange={(event) => setEmail(event.target.value)}
             />
 
@@ -81,11 +81,13 @@ function AddUser() {
               ref={passwordRef}
               title="password: "
               autoComplete="password"
-              className="password"
+              className="px-10 py-2 mt-2 rounded sm:ml-2"
               onChange={(event) => setPassword(event.target.value)}
             />
           </Form>
-          <button onClick={handleSubmit}>Submit</button>
+          <button
+            className='mx-auto mb-2 mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-0 px-4 border border-gray-400 rounded shadow'
+            onClick={handleSubmit}>Submit</button>
 
           <h4> Your inputs:</h4>
           <div>

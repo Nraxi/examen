@@ -54,7 +54,8 @@ function UpdatePassword() {
     <div>
       <div className="grid md:grid-cols-3">
         <h3 className="mb-10 col-span-3 md:col-start-2 md:col-span-1 text-center mt-10 text-2xl font-bold bg-gradient-to-l from-teal-200 to-slate-100 bg-clip-text text-transparent pr-2">
-          Update Password:</h3>
+          Update Password:
+        </h3>
         <div className="mb-2 col-span-3 md:col-start-2 md:col-span-1 row-start-2 p-4 rounded backdrop-blur bg-white/50">
           <p>{msg}</p>
           <p>{msgErr}</p>
@@ -66,7 +67,7 @@ function UpdatePassword() {
               value={email}
               title="Your email: "
               autoComplete="email-new"
-              className="email"
+              className="px-10 py-2 mt-2 rounded sm:ml-16 "
               onChange={(event) => setEmail(event.target.value)}
             />
 
@@ -77,7 +78,7 @@ function UpdatePassword() {
               value={oldpassword}
               title="Your old password: "
               autoComplete="oldpassword-new"
-              className="oldpassword"
+              className="px-10 py-2 mt-2 rounded  sm:ml-2 "
               onChange={(event) => setOldpassword(event.target.value)}
             />
 
@@ -88,7 +89,7 @@ function UpdatePassword() {
               value={newpassword}
               title="Your new password: "
               autoComplete="newpassword-new"
-              className="newpassword"
+              className="px-10 py-2 mt-2 rounded sm:ml-0"
               onChange={(event) => setNewPassword(event.target.value)}
             />
 
@@ -99,11 +100,12 @@ function UpdatePassword() {
               value={confirmpassword}
               title="Confirm password: "
               autoComplete="confirmpassword-new"
-              className="confirmpassword"
+              className="px-10 py-2 mt-2 rounded sm:ml-2"
               onChange={(event) => setConfirmPassword(event.target.value)}
             />
           </form>
-          <button onClick={handleSubmit}>Submit</button>
+          <button className="block mx-auto mt-8 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-gray-400 rounded shadow"
+            onClick={handleSubmit}>Submit</button>
 
         </div>
       </div>

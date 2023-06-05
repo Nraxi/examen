@@ -11,15 +11,18 @@ function LoggedOut() {
   }
 
   return (
-    <div className="container">
+    <div className="text-center mt-20">
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <p>
-            <em className="mt-3">You have successfully logged out</em>
+            <em className="mt-3 text-2xl">You have successfully logged out</em>
           </p>
-          <p>Click here to login agian:</p>
-          <button onClick={BackToLogin}>Login Page</button>
+          <br />
+          <button
+            className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+            onClick={BackToLogin}>To login Page</button>
         </div>
+        <p className="mt-3 text-l">Click here to login agian..</p>
       </div>
     </div>
   )

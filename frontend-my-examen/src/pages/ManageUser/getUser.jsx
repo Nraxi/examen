@@ -42,7 +42,7 @@ function GetUser() {
             id="inputfield"
             title="id: "
             autoComplete="inputfield-new"
-            className="inputfield"
+            className="px-10 py-2 mt-2 rounded sm:ml-2"
             onChange={(event) => setInputField(event.target.value)}
           />
         </form>
@@ -61,8 +61,12 @@ function GetUser() {
           )}
         </div>
 
-        <button onClick={GetUsersFromApi}>Click</button>
-        <button onClick={handleResetList}>Reset List</button>
+        <button
+          className='mr-2 mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-0 px-4 border border-gray-400 rounded shadow'
+          onClick={GetUsersFromApi}>Get user</button>
+        <button
+          className='mr-2 mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-0 px-4 border border-gray-400 rounded shadow'
+          onClick={handleResetList}>Reset List</button>
       </div>
     </div>
   );

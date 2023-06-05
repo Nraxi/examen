@@ -42,7 +42,7 @@ function DelUser() {
             id="inputfield"
             title="id: "
             autoComplete="inputfield-new"
-            className="inputfield"
+            className="px-10 py-2 mt-2 rounded sm:ml-2"
             onChange={(event) => setInputField(event.target.value)}
           />
         </form>
@@ -51,7 +51,9 @@ function DelUser() {
 
         </div>
         <br />
-        <button onClick={DeleteUsersByID}>Delete user</button>
+        <button
+          className='block mx-auto mt-2 bg-red-400 hover:bg-red-800 text-gray-800 font-semibold py-0 px-4 border border-gray-400 rounded shadow'
+          onClick={DeleteUsersByID}>Delete user</button>
       </div>
     </div>
   );

@@ -84,7 +84,7 @@ function UpdateUser() {
                   value={email}
                   title="Your email: "
                   autoComplete="email-new"
-                  className="email"
+                  className="px-10 py-2 mb-0 mt-2 rounded sm:ml-2"
                   onChange={(event) => setEmail(event.target.value)}
                 />
                 <br />
@@ -95,7 +95,7 @@ function UpdateUser() {
                   value={newemail}
                   title="New email: "
                   autoComplete="newemail-new"
-                  className="newemail"
+                  className="px-10 py-2 rounded sm:ml-2"
                   onChange={(event) => setNewEmail(event.target.value)}
                 />
 
@@ -107,24 +107,27 @@ function UpdateUser() {
                   id="name"
                   title="Name: "
                   autoComplete="name-new"
-                  className="name"
+                  className="px-10 py-2 mt-2 rounded sm:ml-10"
                   onChange={(event) => setName(event.target.value)}
                 />
 
               </Form>
               <span>{message}</span><br />
-              <button onClick={handleSubmit}>Submit</button>
+              <button
+                className="block mx-auto mt-8 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-gray-400 rounded shadow"
+                onClick={handleSubmit}>Submit</button>
               <div>
                 <h4>Response:</h4>
                 <p>new name: {resData.name}</p>
                 <p>new email: {resData.email}</p>
-                <p>To refresh page:<button onClick={RefreshPage}>Click here</button></p>
+                <p className='mr-2 mt-2 '>
+                  To refresh page:<button className='ml-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-0 px-4 border border-gray-400 rounded shadow' onClick={RefreshPage}>Click here</button></p>
               </div>
             </div>
 
           </div >
         </div>
-      </div>
+      </div >
     </>
 
   )

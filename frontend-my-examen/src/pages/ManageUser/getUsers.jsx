@@ -37,7 +37,9 @@ function GetUsers() {
         GET Users:</h3>
       <div className="mb-2 col-span-3 md:col-start-2 md:col-span-1 row-start-2 p-4 rounded backdrop-blur bg-white/50">
 
-        <button onClick={GetUsersFromApi}>Get users</button>
+        <button
+          className='bg-transparent ml-10 hover:bg-green-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+          onClick={GetUsersFromApi}>Get users</button>
 
         {showTable && data.length > 0 && (
           <table>
@@ -66,7 +68,9 @@ function GetUsers() {
           </table>
         )}
 
-        <button className='ml-10' onClick={handleToggleTable}>
+        <button
+          className='bg-transparent ml-10 hover:bg-green-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+          onClick={handleToggleTable}>
           {showTable ? 'Hide Table' : 'Show Table'}
         </button>
       </div>
